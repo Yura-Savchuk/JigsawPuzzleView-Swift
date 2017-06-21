@@ -81,4 +81,11 @@ public class JigsawPuzzleView : UIView, ViewDrawing {
         super.touchesEstimatedPropertiesUpdated(touches)
     }
 
+    public func blendSegments() {
+        if segmentsPattern != nil {
+            segmentsPattern!.blendSegments()
+            drawLayers()
+        }
+    }
+
 }

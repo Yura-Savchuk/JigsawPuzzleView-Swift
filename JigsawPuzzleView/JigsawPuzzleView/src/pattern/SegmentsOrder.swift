@@ -23,13 +23,17 @@ class SegmentsOrder {
         }
     }
 
+}
+
+extension SegmentsOrder {
+
     func swapSegments(_ index1: Int, _ index2: Int) {
         if index1 == index2 {return}
         swapSegmentsInArray(index1, index2)
         swapSegmentsOrder(index1, index2)
     }
 
-    private func swapSegmentsInArray(_ index1: Int, _ index2: Int) {
+    fileprivate func swapSegmentsInArray(_ index1: Int, _ index2: Int) {
         let sizedSegments: [Segment] = segments!.sizedSegments
         let segment1 = sizedSegments[index1]
         let segment2 = sizedSegments[index2]
@@ -40,11 +44,28 @@ class SegmentsOrder {
         segments!.sizedSegments[index2] = segment1
     }
 
-    private func swapSegmentsOrder(_ index1: Int, _ index2: Int) {
+    fileprivate func swapSegmentsOrder(_ index1: Int, _ index2: Int) {
         let key1: Int = order.allKeysForValue(val: index1).first!
         let key2: Int = order.allKeysForValue(val: index2).first!
         order[key1] = index2
         order[key2] = index1
+    }
+
+}
+
+extension SegmentsOrder {
+
+    func blend() {
+        for i in 0...order.count-1 {
+            let currIndex: Int = order[i]!
+            let randomIndex = Int(arc4random_uniform(UInt32(order.count - 1)))
+            if currIndex != randomIndex {
+                if segments!.sizedSegments != nil {
+                    swapSegmentsInArray(currIndex, randomIndex)
+                }
+                swapSegmentsOrder(currIndex, randomIndex)
+            }
+        }
     }
 
 }

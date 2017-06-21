@@ -31,7 +31,7 @@ class SegmentsPattern12: SegmentsPattern {
     }
 
     func blendSegments() {
-
+        segments.blendSegments()
     }
 
     func draw(_ rect: CGRect) {

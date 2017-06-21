@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,11 +20,21 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H03-eO-0h1">
+                                <rect key="frame" x="16" y="335" width="635" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="F4L-nh-4Zk"/>
+                                </constraints>
+                                <state key="normal" title="Blend"/>
+                                <connections>
+                                    <action selector="onTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="9kN-Dx-gOh"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oxs-5q-Tut" customClass="JigsawPuzzleView" customModule="JigsawPuzzleView">
-                                <rect key="frame" x="16" y="237" width="343" height="193"/>
+                                <rect key="frame" x="62" y="14" width="543" height="305"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -40,9 +50,26 @@
                         </accessibility>
                         <constraints>
                             <constraint firstItem="oxs-5q-Tut" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1io-um-GfK"/>
+                            <constraint firstItem="oxs-5q-Tut" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="5Bs-0u-N0V"/>
                             <constraint firstItem="oxs-5q-Tut" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BXF-CA-Xrl"/>
+                            <constraint firstItem="oxs-5q-Tut" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="62" id="Ddo-aZ-Na6"/>
+                            <constraint firstAttribute="trailing" secondItem="H03-eO-0h1" secondAttribute="trailing" constant="16" id="WiC-8F-GO9"/>
+                            <constraint firstAttribute="trailing" secondItem="oxs-5q-Tut" secondAttribute="trailing" constant="62" id="WrC-WG-iHG"/>
+                            <constraint firstItem="H03-eO-0h1" firstAttribute="top" secondItem="oxs-5q-Tut" secondAttribute="bottom" constant="16" id="bc3-gZ-QVP"/>
+                            <constraint firstItem="H03-eO-0h1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fAe-oA-dOk"/>
+                            <constraint firstItem="H03-eO-0h1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="uCe-Et-NUG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="H03-eO-0h1" secondAttribute="bottom" constant="8" id="v3O-S9-mc0"/>
                             <constraint firstItem="oxs-5q-Tut" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vGw-tJ-Afa"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1io-um-GfK"/>
+                                <exclude reference="5Bs-0u-N0V"/>
+                                <exclude reference="BXF-CA-Xrl"/>
+                                <exclude reference="vGw-tJ-Afa"/>
+                                <exclude reference="fAe-oA-dOk"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="puzzleView" destination="oxs-5q-Tut" id="cuh-m1-wN9"/>
@@ -50,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="123.68815592203899"/>
+            <point key="canvasLocation" x="115.59220389805098" y="122.40000000000001"/>
         </scene>
     </scenes>
 </document>

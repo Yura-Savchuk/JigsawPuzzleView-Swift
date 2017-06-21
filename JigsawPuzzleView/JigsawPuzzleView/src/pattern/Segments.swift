@@ -66,4 +66,11 @@ class Segments {
         segment.stopMoving()
     }
 
+    func blendSegments() {
+        order.blend()
+        if viewWidth != 0 && viewHeight != 0 {
+            updateSize(viewWidth, viewHeight)
+        }
+    }
+
 }
