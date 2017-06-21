@@ -18,8 +18,8 @@ class SegmentsPattern12: SegmentsPattern {
 
     private let segmCenter: SegmentCenter
 
-    init(_ segments: [UIImage]!) {
-        self.segments = Segments(segments: segments, size: SEGMENT_SIZE)
+    init(_ segments: [UIImage]!, _ delegate: JigsawPuzzleViewDelegate) {
+        self.segments = Segments(segments: segments, size: SEGMENT_SIZE, delegate)
         self.segmentsDrawer = SegmentLayersDrawer(self.segments, segmentPoint)
         self.segmCenter = SegmentCenter(segmentPoint, self.segments)
     }

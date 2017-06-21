@@ -24,7 +24,7 @@ let segments: [UIImage] = [
     UIImage(named: "pazzle_segment_12")!
 ];
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, JigsawPuzzleViewDelegate {
 
     @IBOutlet weak var puzzleView: JigsawPuzzleView!
     
@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        puzzleView.delegate = self
         puzzleView.setSegments(segments)
     }
 
@@ -42,6 +43,12 @@ class ViewController: UIViewController {
 
     @IBAction func onTouchDown(_ sender: Any) {
         puzzleView.blendSegments()
+    }
+
+    //PRAGMA: JigsawPuzzleViewDelegate
+
+    func onAllSegmentsGathered() {
+        print("Gathered.")
     }
 
 }

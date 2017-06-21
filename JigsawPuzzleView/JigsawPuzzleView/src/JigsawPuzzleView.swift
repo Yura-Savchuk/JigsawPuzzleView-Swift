@@ -13,6 +13,15 @@ public class JigsawPuzzleView : UIView, ViewDrawing {
 
     private var segmentsPattern: SegmentsPattern? = nil
     private var segmentMotion: SegmentMotion? = nil
+    private let delegateProxy: DelegateProxy = DelegateProxy()
+    public var delegate: JigsawPuzzleViewDelegate? {
+        get {
+            return delegateProxy.delegate
+        }
+        set(newValue) {
+            delegateProxy.delegate = newValue
+        }
+    }
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +38,7 @@ public class JigsawPuzzleView : UIView, ViewDrawing {
     }
 
     public func setSegments(_ segments: Array<UIImage>!) {
-        let patternFct = SegmentPatternFactory()
+        let patternFct = SegmentPatternFactory(delegateProxy)
         segmentsPattern = patternFct.createPattern(segments)
         segmentMotion = SegmentMotionImpl(segmentsPattern!, self)
     }
@@ -77,15 +86,21 @@ public class JigsawPuzzleView : UIView, ViewDrawing {
         segmentMotion?.touchesEnded(location)
     }
 
-    override open func touchesEstimatedPropertiesUpdated(_ touches: Set<UITouch>) {
-        super.touchesEstimatedPropertiesUpdated(touches)
-    }
-
     public func blendSegments() {
         if segmentsPattern != nil {
             segmentsPattern!.blendSegments()
             drawLayers()
         }
+    }
+
+}
+
+fileprivate class DelegateProxy: JigsawPuzzleViewDelegate {
+
+    fileprivate var delegate: JigsawPuzzleViewDelegate? = nil
+
+    func onAllSegmentsGathered() {
+        delegate?.onAllSegmentsGathered()
     }
 
 }

@@ -11,6 +11,7 @@ class Segments {
     var sizedSegments: [Segment]!
 
     private let segmentSize: SegmentSize!
+    private let delegate: JigsawPuzzleViewDelegate
 
     private lazy var order: SegmentsOrder = {
         var ord = SegmentsOrder(self)
@@ -21,13 +22,14 @@ class Segments {
     private var viewWidth: Int = 0
     private var viewHeight: Int = 0
 
-    init(segments: [UIImage]!, size: SegmentSize) {
+    init(segments: [UIImage]!, size: SegmentSize, _ delegate: JigsawPuzzleViewDelegate) {
         self.segmentsImg = segments
         self.sizedSegments = [Segment]()
         for i in 0...segments.count - 1 {
             sizedSegments.append(Segment(self.segmentsImg[i]))
         }
         self.segmentSize = size
+        self.delegate = delegate
     }
 
     func updateSize(_ width: Int, _ height: Int) {
@@ -64,6 +66,9 @@ class Segments {
 
     func stopMoving(_ segment: Segment) {
         segment.stopMoving()
+        if order.isSegmentsInSequentialOrder() {
+            delegate.onAllSegmentsGathered()
+        }
     }
 
     func blendSegments() {

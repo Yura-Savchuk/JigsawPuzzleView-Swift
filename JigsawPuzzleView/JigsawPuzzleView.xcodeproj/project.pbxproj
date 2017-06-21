@@ -14,6 +14,7 @@
 		68427398E8F1D8D551FE1480 /* SegmentMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68427E0C534BB94174F356D9 /* SegmentMotion.swift */; };
 		684273A896D6BBA146F73677 /* SegmentPoint12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684279C82C808B080C706E39 /* SegmentPoint12.swift */; };
 		684273D99AC35E85D7DFF7FF /* SegmentLayersDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684273DFFDA775E9A4F22C0B /* SegmentLayersDrawer.swift */; };
+		684273F8273EDD9D7E3E5008 /* JigsawPuzzleViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68427CE95FBA72C4A71D5892 /* JigsawPuzzleViewDelegate.swift */; };
 		684274FB331C828EA1EE90BB /* SegmentsPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68427B522B0FEB2765CD6A6B /* SegmentsPattern.swift */; };
 		68427521875BF8CB3D5A9F85 /* Segments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68427A981DBC96B1F7B4F03A /* Segments.swift */; };
 		684276387273AB246D552946 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684273FA1A81E3A47493A3FF /* Position.swift */; };
@@ -53,6 +54,7 @@
 		68427B522B0FEB2765CD6A6B /* SegmentsPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentsPattern.swift; sourceTree = "<group>"; };
 		68427B6ED1154ECEE82112FC /* SegmentPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentPoint.swift; sourceTree = "<group>"; };
 		68427B8979FDE37674CBCCA2 /* SegmentMotionImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentMotionImpl.swift; sourceTree = "<group>"; };
+		68427CE95FBA72C4A71D5892 /* JigsawPuzzleViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JigsawPuzzleViewDelegate.swift; sourceTree = "<group>"; };
 		68427D189E02A3EBA5693D28 /* SegmentCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentCenter.swift; sourceTree = "<group>"; };
 		68427D627BBC9E97E7319A0B /* SegmentsOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentsOrder.swift; sourceTree = "<group>"; };
 		68427E0C534BB94174F356D9 /* SegmentMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentMotion.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				684279EB3B851981DD60E24C /* pattern */,
 				6842710738FBBC5D052EF0D3 /* motion */,
 				6842755235A1D9A667F4EC9A /* ViewDrawing.swift */,
+				68427CE95FBA72C4A71D5892 /* JigsawPuzzleViewDelegate.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				6842712FDF982F58043A11F1 /* ViewDrawing.swift in Sources */,
 				68427991F2AE69E6ACF73797 /* SegmentMoving.swift in Sources */,
 				6842723CC40D83809F74FB1C /* SegmentCenter.swift in Sources */,
+				684273F8273EDD9D7E3E5008 /* JigsawPuzzleViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

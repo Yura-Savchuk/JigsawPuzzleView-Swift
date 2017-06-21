@@ -70,6 +70,19 @@ extension SegmentsOrder {
 
 }
 
+extension SegmentsOrder {
+
+    func isSegmentsInSequentialOrder() -> Bool {
+        for i in 0...order.count-1 {
+            if order[i] != i {
+                return false
+            }
+        }
+        return true
+    }
+
+}
+
 extension Dictionary where Value : Equatable {
     func allKeysForValue(val : Value) -> [Key] {
         return self.filter { $1 == val }.map { $0.0 }
